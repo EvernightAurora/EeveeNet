@@ -4,14 +4,14 @@
 ![samp](./Sample/Samp.png)
 
 ## 数据集使用说明
-- ImageSource文件夹内有3个压缩文件 ```train_data00.zip train_data01.zip test_data.zip```分别是第一期的训练集、第二期的训练集以及测试集。 Sample文件夹内是几张有标签的图片的样品。
+- ImageSource文件夹内有3个压缩文件 ```train_data00.zip, train_data01.zip, test_data.zip```分别是第一期的训练集、第二期的训练集以及测试集。 Sample文件夹内是几张有标签的图片的样品。
 
-- 压缩包内根目录的```Path_List**.txt```记录各文件夹的相对目录，数据为这些目录内后缀为.png的图片文件，大小均为224\*224。**test_data测试集图片大小不是224*224，是未调整大小的较大图片，请使用例如cv2.resize进行拉伸后再使用(千万不要双线性插值，cv2.resize请设置```interpolation=cv2.INTER_AREA```)**
+- 压缩包内根目录的```Path_List**.txt```记录各文件夹的**相对地址**，数据为这些目录内后缀为.png的图片文件，大小均为224\*224。**test_data测试集图片大小不是224*224，是未调整大小的较大图片，请使用例如cv2.resize进行拉伸后再使用(千万不要双线性插值，cv2.resize请设置```interpolation=cv2.INTER_AREA```)**
 > ```train_data01```内有两个Path List，分别是包括数据增强```PathList_Manga_Enhanced.txt```和不包括数据增强```PathList_Manga.txt```，选择一个即可
 
 对于数据，文件名为```aaa-****.png```,最前面三个数字aaa即是它的标签（python可以通过```int(filename.split('-')[0])```获得）。
 
-数字是按照每种伊布是否存在，将它们的正交二进制表示按位或起来得到的。例如
+数字是按照每种伊布是否存在，将它们的正交二进制表示**按位或**起来得到的。例如
 
 ![samp1](./Sample/130-0-01873-2.png)
 
